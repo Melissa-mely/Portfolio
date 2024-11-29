@@ -1,0 +1,94 @@
+/* Variables CSS */
+:root {
+  --primary-color:#ebe710;
+  --bg-color:black;
+  --card-bg: #0D0C0C;
+  --text-color: white;
+  --overlay-color: rgba(0, 0, 0, 0.7);
+  --image-opacity: ;
+  --hover-bg-color: rgba(0, 0, 0, 0.85);
+  --transition-duration: 0.5s;
+  --overlay-bg: rgba(0, 0, 0, 0.6);
+ 
+  --transition-duration: 0.3s;
+  --border-radius:1rem;
+  
+}
+
+/* ---------------------------------Container for the image */
+.image-container {
+ 
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--primary-color);
+    animation: fadeInSlide 1.5s ease-in-out forwards;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    opacity:0.5;
+    transition: transform var(--transition-duration);
+  }
+  
+  /* Static overlay text */
+  .text-overlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    z-index: 2;
+  }
+  .text-overlay p {
+    margin-top: 0.7rem;
+    font-size: 40px;
+    line-height: 2rem;
+  }
+  
+  /* Hover text covering the entire image */
+  .hover-text {
+    position: absolute;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 3rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--hover-bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-duration);
+    z-index: 1;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  
+  /* Hover effect */
+  .image-container:hover img {
+    transform: scale(1.05);
+  }
+  
+  .image-container:hover .hover-text {
+    opacity: 1;
+  }
+  .image-container:hover .hover-text {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+  .image-container:hover {
+    box-shadow: 0 0px 20px var(--primary-color);
+  }
+    
